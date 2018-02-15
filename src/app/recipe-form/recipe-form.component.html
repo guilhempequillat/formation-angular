@@ -1,0 +1,57 @@
+
+<div [hidden]="submitted">
+  <form class="content" (ngSubmit)="onSubmit()" [formGroup]="recipeForm">
+    {{diagnostic}}
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name"
+             required
+              name="name"
+             formControlName="name">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description"
+             required
+             formControlName="description" name="description">
+    </div>
+    <div class="form-group">
+      <label for="imageUrl">Image url</label>
+      <input type="text" class="form-control" id="imageUrl"
+             required
+             formControlName="imageUrl" name="imageUrl">
+    </div>
+   <!-- <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description"
+             required
+             [(ngModel)]="recipe.description" name="description">
+    </div>
+    <div class="form-group">
+      <label for="imageUrl">Image url</label>
+      <input type="text" class="form-control" id="imageUrl"
+             required
+             [(ngModel)]="recipe.picture" name="imageUrl">
+    </div>
+    <div class="form-group">
+      <label>Instructions</label>
+      <div >
+        <input type="text" class="form-control"
+               required
+               [(ngModel)]="recipe.instructions[0]"  name="instructions"
+               (change)="onChangeInstruction()">
+        <div *ngIf="recipe.instructions[0] != '' || recipe.instructions.length!=1">
+        <input  *ngFor="let instruction of recipe.instructions; let i = index" type="text" class="form-control"
+               [(ngModel)]="recipe.instructions[i+1]"  name="instructions"
+               required
+               (change)="onChangeInstruction()">
+        </div>
+      </div>
+    </div>-->
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+<div [hidden]="!submitted">
+  <div class="content">Submited</div>
+</div>

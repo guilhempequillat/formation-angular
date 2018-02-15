@@ -1,0 +1,18 @@
+<div class="recipe" *ngIf="recipe">
+  <h3>{{recipe.name}}</h3>
+  <p>{{recipe.description}}</p>
+  <img mat-card-image [src]="recipe.picture">
+  <ul *ngIf="recipe.ingredients">
+    <li  *ngFor="let ingredient of recipe.ingredients">
+      <span>{{ingredient.name}}</span>
+      <span>{{ingredient.quantity}}</span>
+      <span>{{ingredient.unit}}</span>
+    </li>
+  </ul>
+  <h4>Instructions</h4>
+  <ul >
+    <li *ngFor="let instruction of recipe.instructions">{{instruction}}</li>
+  </ul>
+
+  <button (click)="goBack()">Go Back</button>
+</div>

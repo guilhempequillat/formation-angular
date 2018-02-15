@@ -1,0 +1,14 @@
+.content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.page{
+  background-color: rgb(80,80,80);
+}
+
+.body{
+  margin:-8px;
+}
